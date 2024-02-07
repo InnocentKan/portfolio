@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .project {
+            margin-bottom: 30px;
+        }
+        .project-title {
+            color: #333;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="project">
+            <h2 class="project-title">Startup Analysis</h2>
+            <p><strong>1. Introduction:</strong>In today's dynamic business landscape, startups play a crucial role in driving innovation, fostering economic growth, and disrupting traditional industries. As such, understanding the factors that contribute to a startup's success is of paramount importance for entrepreneurs, investors, and stakeholders alike. This project aims to delve into a dataset comprising over 10,000 startups to uncover insights into the key determinants of startup success.
+            </p>
+            <p><strong>2.Overview:</strong> TThe objective of this project is to analyze a comprehensive dataset of startups to identify patterns, trends, and correlations that correlate with success in the startup ecosystem. By leveraging various analytical tools and techniques, including Excel, Python Pandas, OpenRefine, and Power BI, we seek to gain a deeper understanding of the factors driving startup performance.
+                Through rigorous data collection, preprocessing, analysis, and visualization, we aim to address the following key questions:
+                <l>-What are the main industries dominating the startup landscape?</ol>
+                <ol>-Which geographical regions are most conducive to startup growth and investment?</ol>
+                <ol>-What funding types are prevalent among startups, and how do they impact success?</ol>
+                <ol>-How do metrics such as total funding amount, number of funding rounds, and last funding amount correlate with startup success?</ol>
+                <ol>-What insights can be gleaned from the analysis to inform future investment decisions, business strategies, and entrepreneurial endeavors?</ol>
+                By conducting a systematic analysis of the dataset and leveraging advanced analytical tools, we endeavor to provide valuable insights that can inform decision-making processes and contribute to a deeper understanding of the dynamics shaping the startup ecosystem. Through this project, we aim to empower entrepreneurs, investors,and stakeholders with actionable intelligence to navigate the complexities of the startup landscape and drive sustainable growth and innovation. 
+                </p>
+            <p><strong>3. Data Collection and Preprocessing:</strong> Collecting and preprocessing data from sources like Crunchbase can present numerous challenges, including dealing with messy, inconsistent, and incomplete datasets. In this section, we outline the process of cleaning the dataset to make it suitable for analysis.
+                Challenges:
+                Messy Data
+                Missing Values
+                Duplicate Entries
+                Inconsistent Formats
+                </p>
+            <p><strong>Data Cleaning Process:</strong>
+                <ol><strong>Excel:</strong> I used excel’s built-in functionality to identify and remove duplicates. I also use the built-in function namely TRIM() to remove leading spaces in unique columns for consistent data.</ol>
+               <ol> <strong>OpenRefine:</strong> OpenRefine’s clustering algorithm allowed me to group similar entries for specific columns together. This allowed me to identify the most prominent industries and standardize headquarters data for analysis.</ol>
+              <ol> <strong>Python Pandas:</strong>  Pandas were useful in using dataframes in addressing missing values such as filling null cells with mean or median values with the fillna() function or manual imputation of values.</ol>
+              <p>RAW DATA:</p>
+             <img src="images/EIC 1 - Raw data.png" alt="" height="150" width="400">
+             <p>CLEAN DATA:</p>
+             <img src="images/EIC 2 - Clean Data.png" alt="" height="150" width="400">
+                </p>
+            <p><strong>4. Data Analysis:</strong> In this section, we present the findings of our data analysis, which involved summarizing key statistics, identifying dominant industries and geographical regions, exploring prevalent funding types, and conducting correlation analysis.
+            </p>
+            <p><strong>a. Summary Statistics:
+            </strong>
+            <ol ><strong>Last Funding Amount Currency (in USD):</strong></ol> The average last funding amount is $11,527,938.67, with a range from minimum to maximum values.
+            <ol ><strong>Total Funding Amount Currency (in USD):</strong></ol> The average total funding amount is $20,259,684.67, indicating the cumulative investment received by startups.
+            <ol ><strong>Number of Funding Rounds:</strong></ol>On average, startups have undergone 2 funding rounds, with a maximum of 14 rounds.
+            <ol ><strong>Number of Founders: </strong></ol> The average number of founders per startup is 2, with a maximum of 10 founders.</p>
+
+            <p><strong>b. Key Insights:
+            </strong>
+            <ol><strong>Top Headquarters (HQs):</strong></ol>  The top 5 headquarters conducive to startup growth and investment are the USA, UK, India, Canada, and France
+            <ol ><strong>Prominent Industries:</strong></ol> The dominant industries shaping the startup landscape are IT and software, AI and ML, Health Care and Medical, Finance and FinTech, and E-commerce.
+            <ol ><strong>Prevalent Funding Types</strong></ol> Seed, Series A, Series B, Grant, and Angel are the most prevalent funding types among startups
+          
+
+            <p><strong>c. Correlation Analysis:
+            </strong>
+            <p>I transformed the necessary columns into numerical format and used the CORREL() function.</p>
+            <ol><strong>Number of Funding Rounds vs Total Funding:</strong></ol>  TWe found a weak positive correlation of 0.1492 between the number of funding rounds and total funding amount. While there is a slight tendency for startups with more funding rounds to have higher total funding, the correlation is not strong.
+
+            <ol><strong>Last Funding vs Total Funding:</strong></ol> A strong positive correlation of 0.7387 was observed between the last funding amount and total funding amount. This suggests that startups receiving higher last funding amounts tend to have higher total funding amounts.
+            <ol><strong>Total Funding vs Number of Founders:</strong></ol>  A very weak positive correlation of 0.0120 was found between the total funding amount and the number of founders. This indicates that the number of founders has minimal impact on the total funding received by startups.
+
+            <p><strong>d. Conclusion:
+            </strong>
+            <p>The analysis provides valuable insights into the startup landscape, highlighting the importance of funding, industry focus, and geographical location. Understanding these factors can inform strategic decision-making and investment strategies in the startup ecosystem 
+            <img src="images/EIC 3 - Scatter plot.png" alt="" height="400" width="500">
+            </p>
+
+
+
+            <p><strong>5. Power BI visualization:</strong> Explore the startup landscape with our Power BI dashboard! This interactive visualization provides key insights into startup distribution across industries, regions, funding types, and funding trends. Join us as we uncover valuable insights that drive innovation and growth in the entrepreneurial world.
+                <img src="images/EIC 4 - Visualization.png" alt="" height="400" width="800">
+            </p>
+            <p><strong>6. Conclusion:</strong> In conclusion, our analysis of startup data provided valuable insights into the key factors influencing startup success. Through meticulous data collection, preprocessing, analysis, and visualization, we uncovered compelling patterns and trends. Here are the key takeaways:
+                <ol>Dominant Industries: Identified top industries driving startup innovation, including IT and software, AI and ML, Health Care and Medical, Finance and FinTech, and E-commerce.
+                </ol>
+               <ol> Geographic Influence: Explored the influence of geographic regions on startup growth, with the USA, UK, India, Canada, and France emerging as prominent hubs.
+            </ol>
+              <ol>  Funding Dynamics: Analyzed prevalent funding types such as Seed, Series A, Series B, Grant, and Angel, shedding light on their impact on startup success.
+            </ol>
+            <ol>  Correlation Insights: Examined correlations between variables like last funding amount, total funding, and number of funding rounds, providing valuable insights into factors driving startup success.
+
+            </ol>
+            Through this project, we've gained a deeper understanding of the startup landscape and the intricate interplay of factors that contribute to entrepreneurial success.
+            </p>
+        </div>
+   

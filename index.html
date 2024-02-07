@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6bf1ed113f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h3 id="name">INNOCENT.</h3>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#bio">Bio</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Hi, I'm Innocent Kananga</h1><br>
+                <p>Data scientist | Analyst</p>
+            </div>
+            <br>
+            <br>
+            <a href="https://docs.google.com/document/d/1FQ4H6bbFGcqyomOCmEuzYdiSC6bhqp4cB22EFfocA-g/edit?usp=sharing">RESUME</a>
+        </div>
+    </div>
+<!---------------------bio-------------------------->
+    <div id="bio">
+        <div class="container">
+            <div class="row">
+                <div class="bio-col-1">
+                    <img src="images/background.jpg">
+                </div>
+                <div class="bio-col-2">
+                    <h1 class="sub-title-1">About Me</h1><br>
+                    <p>As a passionate data science student, I specialize in deciphering insights crucial for business analysis and
+                        research. With adept analytical skills and practical experience in data manipulation, my commitment lies in
+                        connecting data to impactful business outcomes. I possess a unique ability to articulate technical concepts to
+                        non-technical stakeholders, fostering effective collaboration and informed decision-making.
+                        </p><br>
+                    <p>Skills to be acquired:</p><br>
+                    <div class="container">
+                        <div class="bio-skill-2">
+
+                           <p><li>Python</li></p>
+                            <li>SQL</li>
+                            <li>Power BI</li>
+                            <li>Mathematics for Data Science</li>
+                            <li>Machine Learning</li>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br>
+<!------------------------Portfolio--------------------->
+
+<div class="container">
+    <div class="row">
+        <div class="project">
+            <h1>PROJECTS</h1><br>
+            <h2>NB: Click on the picture to access the projects.</h2><br>
+            <h3>1. A Data-Driven Analysis of 10,000 Startups</h3><br>
+        </div>
+        <div class="image-container">
+            <a href="portfolio.html"><img src="images/Startups.jpg" alt="Image 1" height="200" width="400"></a>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="project">
+            <h3>2. Water Access and Infrastructure EDA</h3><br>
+            <p>This is an exploratory data analysis project.</p><br>
+        </div><br>
+        <div class="image-container">
+            <a href="majiDongo.html"><img src="images/Maji Ndogo.png" alt="Image 2" height="200" width="400"></a>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br>
+
+    <!---------contact------------------------------------->
+
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title-3">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> innocentkmalvin0@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +250788613448</p>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form><br>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright @ Innocent.</p>
+        </div>
+    </div>
+    
+    <script>
+        var sidemenu = document.getElementById('sidemenu');
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz1FtZqsOIQIIGYllQjcLd28DOQLCpH2gu4OBN-Pyxtl_5jQOwEYw0wCq3_BBqAgJesDw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById('msg')
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        } )
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
